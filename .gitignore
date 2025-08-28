@@ -113,8 +113,6 @@ dmypy.json
 ehthumbs.db
 Thumbs.db
 
-# cinfig file
-config/config.json
+# config file
+config/config.yaml
 
-# log file
-*.log
