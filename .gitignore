@@ -116,3 +116,8 @@ Thumbs.db
 # config file
 config/config.yaml
 
+feiq/
+logs/
+tmp.py
+
+AGENTS.md
