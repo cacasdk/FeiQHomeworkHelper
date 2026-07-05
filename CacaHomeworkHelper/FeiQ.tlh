@@ -1,0 +1,1525 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.9782.0 (144bcf87).
+//
+// FeiQ.tlh
+//
+// C++ source equivalent of Win32 type library ..\tlb\FeiQ.tlb
+// compiler-generated file created 04/16/13 at 15:56:25 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+//
+// Forward references and typedefs
+//
+
+struct __declspec(uuid("d9f81b17-c3dc-4ae6-9583-538ee3cd6e41"))
+/* dual interface */ IFQRoot;
+struct __declspec(uuid("8f49418b-b865-458b-a9c7-d6da6e71164b"))
+/* dual interface */ IFQBuddyCollection;
+struct __declspec(uuid("5a049b46-8a6e-4abd-a8e0-5655bc2350f4"))
+/* dual interface */ IFQBuddy;
+struct __declspec(uuid("6971785d-30f9-4646-a5e2-25bacf350955"))
+/* dual interface */ IFQData;
+struct __declspec(uuid("b4a4052f-38e6-4883-abea-a11f4a62432b"))
+/* dual interface */ IFQDataCollection;
+struct __declspec(uuid("16036251-4675-43db-a500-669bb007a518"))
+/* dual interface */ IFQModule;
+struct __declspec(uuid("0a362156-c813-4f07-a809-0dd9a917b8e6"))
+/* dual interface */ IFQModuleSite;
+struct __declspec(uuid("895766c5-f022-4097-9541-8b278e83ffad"))
+/* dual interface */ IClientObjectsModule;
+struct __declspec(uuid("1375ad4b-09bc-4e76-8f5b-37ebeb2d6366"))
+/* dual interface */ IFQMenu;
+struct __declspec(uuid("b4e0b06e-9af1-47fb-b825-fe5766cb796e"))
+/* dual interface */ IFQUICommand;
+struct __declspec(uuid("22f47fd2-b84d-443e-ac16-f37b4e519cf2"))
+/* dispinterface */ _IFQRootEvents;
+struct __declspec(uuid("d48f8738-92db-4ceb-b367-8c5e1b1ab632"))
+/* dispinterface */ _IFQModuleSiteEvents;
+struct /* coclass */ ClientObjectsModule;
+struct __declspec(uuid("89e013ed-5173-4162-8be8-dca2a2e63f12"))
+/* dispinterface */ _IFQMenuEvents;
+struct __declspec(uuid("91b88014-9bae-43bc-bb88-24f5939d7f17"))
+/* dual interface */ IFQFolderBar;
+struct __declspec(uuid("d73823df-e0bf-4896-8f27-4d5e28dcf911"))
+/* dual interface */ IFQUi;
+struct __declspec(uuid("130a07f6-648c-4877-ac88-c0574bf5387b"))
+/* dual interface */ IFQCalendar;
+struct __declspec(uuid("b8ce4d69-9327-4ba4-a8cc-ea677951dcf7"))
+/* dual interface */ IFQTools;
+struct __declspec(uuid("1d9e31f3-04fb-4cef-98d4-dfaab65288d3"))
+/* dual interface */ IApplication;
+struct /* coclass */ FQData;
+struct /* coclass */ FQDataCollection;
+struct /* coclass */ FQBuddyCollection;
+struct /* coclass */ FQBuddy;
+struct /* coclass */ FQFolderBar;
+struct /* coclass */ FQUi;
+struct /* coclass */ FQCalendar;
+struct /* coclass */ FQTools;
+struct /* coclass */ Application;
+struct /* coclass */ FQRoot;
+struct /* coclass */ FQModuleSite;
+struct /* coclass */ FQMenu;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(IFQRoot, __uuidof(IFQRoot));
+_COM_SMARTPTR_TYPEDEF(IFQBuddyCollection, __uuidof(IFQBuddyCollection));
+_COM_SMARTPTR_TYPEDEF(IFQBuddy, __uuidof(IFQBuddy));
+_COM_SMARTPTR_TYPEDEF(IFQData, __uuidof(IFQData));
+_COM_SMARTPTR_TYPEDEF(IFQDataCollection, __uuidof(IFQDataCollection));
+_COM_SMARTPTR_TYPEDEF(IFQModule, __uuidof(IFQModule));
+_COM_SMARTPTR_TYPEDEF(IFQModuleSite, __uuidof(IFQModuleSite));
+_COM_SMARTPTR_TYPEDEF(IClientObjectsModule, __uuidof(IClientObjectsModule));
+_COM_SMARTPTR_TYPEDEF(IFQMenu, __uuidof(IFQMenu));
+_COM_SMARTPTR_TYPEDEF(IFQUICommand, __uuidof(IFQUICommand));
+_COM_SMARTPTR_TYPEDEF(_IFQRootEvents, __uuidof(IDispatch));
+_COM_SMARTPTR_TYPEDEF(_IFQModuleSiteEvents, __uuidof(IDispatch));
+_COM_SMARTPTR_TYPEDEF(_IFQMenuEvents, __uuidof(IDispatch));
+_COM_SMARTPTR_TYPEDEF(IFQFolderBar, __uuidof(IFQFolderBar));
+_COM_SMARTPTR_TYPEDEF(IFQUi, __uuidof(IFQUi));
+_COM_SMARTPTR_TYPEDEF(IFQCalendar, __uuidof(IFQCalendar));
+_COM_SMARTPTR_TYPEDEF(IFQTools, __uuidof(IFQTools));
+_COM_SMARTPTR_TYPEDEF(IApplication, __uuidof(IApplication));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("d9f81b17-c3dc-4ae6-9583-538ee3cd6e41"))
+IFQRoot : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetModule))
+    IDispatchPtr Module[];
+    __declspec(property(get=GetVersion))
+    _bstr_t Version;
+    __declspec(property(get=GetOnlineBuddys))
+    IFQBuddyCollectionPtr OnlineBuddys;
+    __declspec(property(get=GetGroupBuddys))
+    IFQBuddyCollectionPtr GroupBuddys[][];
+    __declspec(property(get=GetUserBuddy))
+    IFQBuddyPtr UserBuddy[];
+    __declspec(property(get=GetUserCustomConfig))
+    IFQDataPtr UserCustomConfig;
+    __declspec(property(get=GetCurWorkDirectory))
+    _bstr_t CurWorkDirectory;
+    __declspec(property(get=GetMainWndHandle))
+    long MainWndHandle;
+    __declspec(property(get=GetGlobalData))
+    IFQDataPtr GlobalData;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    IDispatchPtr GetModule (
+        _bstr_t Identifier );
+    _bstr_t GetVersion ( );
+    IFQBuddyCollectionPtr GetOnlineBuddys ( );
+    IFQBuddyCollectionPtr GetGroupBuddys (
+        _bstr_t GroupName,
+        VARIANT_BOOL bAutoGroup );
+    IFQBuddyPtr GetUserBuddy (
+        _bstr_t UserIPValue );
+    IFQDataPtr GetUserCustomConfig ( );
+    _bstr_t GetCurWorkDirectory ( );
+    HRESULT SendBuddyMessage (
+        _bstr_t sendBuddyIPs,
+        _bstr_t sendContent,
+        _bstr_t sendFiles );
+    _bstr_t UserSelector (
+        _bstr_t DlgCaption,
+        _bstr_t InitSelBuddys,
+        _bstr_t SelGroupName,
+        long NeedSelNum,
+        VARIANT_BOOL bMustUseFeiQ );
+    HRESULT ShowBuddyChatDialog (
+        _bstr_t sendBuddyIP );
+    HRESULT RefreshBuddys ( );
+    long GetMainWndHandle ( );
+    HRESULT GetMySelfInfo (
+        BSTR * UserName,
+        BSTR * HostName,
+        BSTR * IPValue,
+        BSTR * Mac,
+        long * nPortNo );
+    IFQDataPtr SendMessage (
+        _bstr_t MsgType,
+        _bstr_t MsgName,
+        _bstr_t sParam,
+        struct IFQData * pData );
+    IFQDataPtr GetGlobalData ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Module (
+        BSTR Identifier,
+        IDispatch * * pVal ) = 0;
+    virtual HRESULT __stdcall get_Version (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_OnlineBuddys (
+        struct IFQBuddyCollection * * pVal ) = 0;
+    virtual HRESULT __stdcall get_GroupBuddys (
+        BSTR GroupName,
+        VARIANT_BOOL bAutoGroup,
+        struct IFQBuddyCollection * * pVal ) = 0;
+    virtual HRESULT __stdcall get_UserBuddy (
+        BSTR UserIPValue,
+        struct IFQBuddy * * pVal ) = 0;
+    virtual HRESULT __stdcall get_UserCustomConfig (
+        struct IFQData * * pVal ) = 0;
+    virtual HRESULT __stdcall get_CurWorkDirectory (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_SendBuddyMessage (
+        BSTR sendBuddyIPs,
+        BSTR sendContent,
+        BSTR sendFiles ) = 0;
+    virtual HRESULT __stdcall raw_UserSelector (
+        BSTR DlgCaption,
+        BSTR InitSelBuddys,
+        BSTR SelGroupName,
+        long NeedSelNum,
+        VARIANT_BOOL bMustUseFeiQ,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_ShowBuddyChatDialog (
+        BSTR sendBuddyIP ) = 0;
+    virtual HRESULT __stdcall raw_RefreshBuddys ( ) = 0;
+    virtual HRESULT __stdcall get_MainWndHandle (
+        long * pHWnd ) = 0;
+    virtual HRESULT __stdcall raw_GetMySelfInfo (
+        BSTR * UserName,
+        BSTR * HostName,
+        BSTR * IPValue,
+        BSTR * Mac,
+        long * nPortNo ) = 0;
+    virtual HRESULT __stdcall raw_SendMessage (
+        BSTR MsgType,
+        BSTR MsgName,
+        BSTR sParam,
+        struct IFQData * pData,
+        struct IFQData * * pVal ) = 0;
+    virtual HRESULT __stdcall get_GlobalData (
+        struct IFQData * * pVal ) = 0;
+};
+
+struct __declspec(uuid("8f49418b-b865-458b-a9c7-d6da6e71164b"))
+IFQBuddyCollection : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetItem))
+    IFQBuddyPtr Item[];
+    __declspec(property(get=GetCount))
+    long Count;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    IFQBuddyPtr GetItem (
+        long Index );
+    long GetCount ( );
+    HRESULT Add (
+        struct IFQBuddy * pFQBuddy );
+    HRESULT Remove (
+        long Index );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Item (
+        long Index,
+        struct IFQBuddy * * pVal ) = 0;
+    virtual HRESULT __stdcall get_Count (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall raw_Add (
+        struct IFQBuddy * pFQBuddy ) = 0;
+    virtual HRESULT __stdcall raw_Remove (
+        long Index ) = 0;
+};
+
+struct __declspec(uuid("5a049b46-8a6e-4abd-a8e0-5655bc2350f4"))
+IFQBuddy : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetMarkName,put=PutMarkName))
+    _bstr_t MarkName;
+    __declspec(property(get=GetName,put=PutName))
+    _bstr_t Name;
+    __declspec(property(get=GetMarkGroupName,put=PutMarkGroupName))
+    _bstr_t MarkGroupName;
+    __declspec(property(get=GetGroupName,put=PutGroupName))
+    _bstr_t GroupName;
+    __declspec(property(get=GetHostName,put=PutHostName))
+    _bstr_t HostName;
+    __declspec(property(get=GetLoginName,put=PutLoginName))
+    _bstr_t LoginName;
+    __declspec(property(get=GetMacAddress,put=PutMacAddress))
+    _bstr_t MacAddress;
+    __declspec(property(get=GetnPortNo,put=PutnPortNo))
+    long nPortNo;
+    __declspec(property(get=GetIPAddress,put=PutIPAddress))
+    unsigned long IPAddress;
+    __declspec(property(get=GetIPValue,put=PutIPValue))
+    _bstr_t IPValue;
+    __declspec(property(get=GetSign,put=PutSign))
+    _bstr_t Sign;
+    __declspec(property(get=GetFaceImage,put=PutFaceImage))
+    long FaceImage[];
+    __declspec(property(get=GetVersion,put=PutVersion))
+    _bstr_t Version;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _bstr_t GetMarkName ( );
+    void PutMarkName (
+        _bstr_t pVal );
+    _bstr_t GetName ( );
+    void PutName (
+        _bstr_t pVal );
+    _bstr_t GetMarkGroupName ( );
+    void PutMarkGroupName (
+        _bstr_t pVal );
+    _bstr_t GetGroupName ( );
+    void PutGroupName (
+        _bstr_t pVal );
+    _bstr_t GetHostName ( );
+    void PutHostName (
+        _bstr_t pVal );
+    _bstr_t GetLoginName ( );
+    void PutLoginName (
+        _bstr_t pVal );
+    _bstr_t GetMacAddress ( );
+    void PutMacAddress (
+        _bstr_t pVal );
+    long GetnPortNo ( );
+    void PutnPortNo (
+        long pVal );
+    unsigned long GetIPAddress ( );
+    void PutIPAddress (
+        unsigned long pVal );
+    _bstr_t GetIPValue ( );
+    void PutIPValue (
+        _bstr_t pVal );
+    _bstr_t GetSign ( );
+    void PutSign (
+        _bstr_t pVal );
+    long GetFaceImage (
+        VARIANT_BOOL bLargeIcon );
+    _bstr_t GetVersion ( );
+    void PutVersion (
+        _bstr_t pVal );
+    void PutFaceImage (
+        VARIANT_BOOL bLargeIcon,
+        long pVal );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_MarkName (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_MarkName (
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall get_Name (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_Name (
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall get_MarkGroupName (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_MarkGroupName (
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall get_GroupName (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_GroupName (
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall get_HostName (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_HostName (
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall get_LoginName (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_LoginName (
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall get_MacAddress (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_MacAddress (
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall get_nPortNo (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_nPortNo (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_IPAddress (
+        unsigned long * pVal ) = 0;
+    virtual HRESULT __stdcall put_IPAddress (
+        unsigned long pVal ) = 0;
+    virtual HRESULT __stdcall get_IPValue (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_IPValue (
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall get_Sign (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_Sign (
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall get_FaceImage (
+        VARIANT_BOOL bLargeIcon,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_Version (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_Version (
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall put_FaceImage (
+        VARIANT_BOOL bLargeIcon,
+        long pVal ) = 0;
+};
+
+struct __declspec(uuid("6971785d-30f9-4646-a5e2-25bacf350955"))
+IFQData : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetXML,put=PutXML))
+    _bstr_t XML;
+    __declspec(property(get=GetCount))
+    long Count;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT SetLong (
+        _bstr_t Key,
+        long Value );
+    long GetLong (
+        _bstr_t Key );
+    HRESULT SetString (
+        _bstr_t Key,
+        _bstr_t String );
+    _bstr_t GetString (
+        _bstr_t Key );
+    HRESULT SetDouble (
+        _bstr_t Key,
+        double Value );
+    double GetDouble (
+        _bstr_t Key );
+    HRESULT SetBuffer (
+        _bstr_t Key,
+        unsigned char * Buffer,
+        long Length );
+    long GetBufferLength (
+        _bstr_t Key );
+    HRESULT GetBuffer (
+        _bstr_t Key,
+        unsigned char * Buffer,
+        long Length );
+    HRESULT SetFQData (
+        _bstr_t Key,
+        struct IFQData * FQData );
+    IFQDataPtr GetFQData (
+        _bstr_t Key );
+    HRESULT SetObject (
+        _bstr_t Key,
+        IDispatch * Object );
+    IDispatchPtr GetObject (
+        _bstr_t Key );
+    HRESULT SetFQDataCollection (
+        _bstr_t Key,
+        struct IFQDataCollection * FQDataCollection );
+    IFQDataCollectionPtr GetFQDataCollection (
+        _bstr_t Key );
+    _bstr_t GetXML ( );
+    void PutXML (
+        _bstr_t pVal );
+    long GetCount ( );
+    HRESULT GetItem (
+        int Index,
+        BSTR * Key,
+        VARIANT * Value );
+    VARIANT_BOOL RemoveKey (
+        _bstr_t Key );
+    _variant_t GetStartPosition ( );
+    HRESULT GetNextAssoc (
+        VARIANT * pos,
+        BSTR * Key,
+        VARIANT * Value );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_SetLong (
+        BSTR Key,
+        long Value ) = 0;
+    virtual HRESULT __stdcall raw_GetLong (
+        BSTR Key,
+        long * Value ) = 0;
+    virtual HRESULT __stdcall raw_SetString (
+        BSTR Key,
+        BSTR String ) = 0;
+    virtual HRESULT __stdcall raw_GetString (
+        BSTR Key,
+        BSTR * String ) = 0;
+    virtual HRESULT __stdcall raw_SetDouble (
+        BSTR Key,
+        double Value ) = 0;
+    virtual HRESULT __stdcall raw_GetDouble (
+        BSTR Key,
+        double * Value ) = 0;
+    virtual HRESULT __stdcall raw_SetBuffer (
+        BSTR Key,
+        unsigned char * Buffer,
+        long Length ) = 0;
+    virtual HRESULT __stdcall raw_GetBufferLength (
+        BSTR Key,
+        long * Length ) = 0;
+    virtual HRESULT __stdcall raw_GetBuffer (
+        BSTR Key,
+        unsigned char * Buffer,
+        long Length ) = 0;
+    virtual HRESULT __stdcall raw_SetFQData (
+        BSTR Key,
+        struct IFQData * FQData ) = 0;
+    virtual HRESULT __stdcall raw_GetFQData (
+        BSTR Key,
+        struct IFQData * * FQData ) = 0;
+    virtual HRESULT __stdcall raw_SetObject (
+        BSTR Key,
+        IDispatch * Object ) = 0;
+    virtual HRESULT __stdcall raw_GetObject (
+        BSTR Key,
+        IDispatch * * pObject ) = 0;
+    virtual HRESULT __stdcall raw_SetFQDataCollection (
+        BSTR Key,
+        struct IFQDataCollection * FQDataCollection ) = 0;
+    virtual HRESULT __stdcall raw_GetFQDataCollection (
+        BSTR Key,
+        struct IFQDataCollection * * FQDataCollection ) = 0;
+    virtual HRESULT __stdcall get_XML (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_XML (
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall get_Count (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall raw_GetItem (
+        int Index,
+        BSTR * Key,
+        VARIANT * Value ) = 0;
+    virtual HRESULT __stdcall raw_RemoveKey (
+        BSTR Key,
+        VARIANT_BOOL * pbRet ) = 0;
+    virtual HRESULT __stdcall raw_GetStartPosition (
+        VARIANT * pos ) = 0;
+    virtual HRESULT __stdcall raw_GetNextAssoc (
+        VARIANT * pos,
+        BSTR * Key,
+        VARIANT * Value ) = 0;
+};
+
+struct __declspec(uuid("b4a4052f-38e6-4883-abea-a11f4a62432b"))
+IFQDataCollection : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetItem))
+    IFQDataPtr Item[];
+    __declspec(property(get=GetCount))
+    long Count;
+    __declspec(property(get=GetXML,put=PutXML))
+    _bstr_t XML;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    IFQDataPtr GetItem (
+        long vIndex );
+    long GetCount ( );
+    HRESULT Add (
+        struct IFQData * FQData );
+    HRESULT Remove (
+        long Index );
+    _bstr_t GetXML ( );
+    void PutXML (
+        _bstr_t pVal );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Item (
+        long vIndex,
+        struct IFQData * * ppElement ) = 0;
+    virtual HRESULT __stdcall get_Count (
+        long * pnCount ) = 0;
+    virtual HRESULT __stdcall raw_Add (
+        struct IFQData * FQData ) = 0;
+    virtual HRESULT __stdcall raw_Remove (
+        long Index ) = 0;
+    virtual HRESULT __stdcall get_XML (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_XML (
+        BSTR pVal ) = 0;
+};
+
+struct __declspec(uuid("16036251-4675-43db-a500-669bb007a518"))
+IFQModule : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetIdentifier))
+    _bstr_t Identifier;
+    __declspec(property(get=GetName))
+    _bstr_t Name;
+    __declspec(property(get=GetDescription))
+    _bstr_t Description;
+    __declspec(property(get=GetAuthor))
+    _bstr_t Author;
+    __declspec(property(get=GetModuleSite))
+    IDispatchPtr ModuleSite;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _bstr_t GetIdentifier ( );
+    _bstr_t GetName ( );
+    _bstr_t GetDescription ( );
+    _bstr_t GetAuthor ( );
+    IDispatchPtr GetModuleSite ( );
+    HRESULT OnLoad (
+        IDispatch * FQModuleSite );
+    HRESULT OnUnload ( );
+    HRESULT OnConfig ( );
+    _bstr_t OnModuleEvent (
+        _bstr_t eventType,
+        _bstr_t Name,
+        _bstr_t sParam );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Identifier (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_Name (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_Description (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_Author (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_ModuleSite (
+        IDispatch * * pVal ) = 0;
+    virtual HRESULT __stdcall raw_OnLoad (
+        IDispatch * FQModuleSite ) = 0;
+    virtual HRESULT __stdcall raw_OnUnload ( ) = 0;
+    virtual HRESULT __stdcall raw_OnConfig ( ) = 0;
+    virtual HRESULT __stdcall raw_OnModuleEvent (
+        BSTR eventType,
+        BSTR Name,
+        BSTR sParam,
+        BSTR * pVal ) = 0;
+};
+
+struct __declspec(uuid("0a362156-c813-4f07-a809-0dd9a917b8e6"))
+IFQModuleSite : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetFQRoot))
+    IFQRootPtr FQRoot;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT SendData (
+        _bstr_t ReceiversIP,
+        struct IFQData * pData );
+    IFQDataPtr GetData (
+        _bstr_t Key,
+        VARIANT_BOOL Remove );
+    IFQRootPtr GetFQRoot ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_SendData (
+        BSTR ReceiversIP,
+        struct IFQData * pData ) = 0;
+    virtual HRESULT __stdcall raw_GetData (
+        BSTR Key,
+        VARIANT_BOOL Remove,
+        struct IFQData * * ppData ) = 0;
+    virtual HRESULT __stdcall get_FQRoot (
+        struct IFQRoot * * pVal ) = 0;
+};
+
+struct __declspec(uuid("895766c5-f022-4097-9541-8b278e83ffad"))
+IClientObjectsModule : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetObject))
+    IDispatchPtr Object[];
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    IDispatchPtr GetObject (
+        _bstr_t Identifier );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Object (
+        BSTR Identifier,
+        IDispatch * * pVal ) = 0;
+};
+
+struct __declspec(uuid("1375ad4b-09bc-4e76-8f5b-37ebeb2d6366"))
+IFQMenu : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    long AddItem (
+        enum FQ_UI_TYPE Type,
+        _bstr_t menuPosName,
+        struct IFQUICommand * FQUICommand,
+        _bstr_t Text,
+        long Level );
+    HRESULT DelItem (
+        enum FQ_UI_TYPE Type,
+        long Id,
+        struct IFQUICommand * FQUICommand );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_AddItem (
+        enum FQ_UI_TYPE Type,
+        BSTR menuPosName,
+        struct IFQUICommand * FQUICommand,
+        BSTR Text,
+        long Level,
+        long * Id ) = 0;
+    virtual HRESULT __stdcall raw_DelItem (
+        enum FQ_UI_TYPE Type,
+        long Id,
+        struct IFQUICommand * FQUICommand ) = 0;
+};
+
+enum FQ_UI_TYPE
+{
+    FQ_UI_TYPE_TRAY_MENU = 0,
+    FQ_UI_TYPE_TREE_USERSEL = 1,
+    FQ_UI_TYPE_LIST_USERSEL = 2,
+    FQ_UI_TYPE_MORE_NOUSERSEL = 3,
+    FQ_UI_TYPE_MULTICHAT_LIST = 4,
+    FQ_UI_TYPE_SEARCHUSER_RESULT = 5,
+    FQ_UI_TYPE_CUSTOMFACE_SEL = 6,
+    FQ_UI_TYPE_DAYCALENDER_SEL = 7,
+    FQ_UI_TYPE_DAYCLOCK_TIP = 8,
+    FQ_UI_TYPE_MAIN_ONLINESTATUS = 9,
+    FQ_UI_TYPE_QUN_SEL = 10,
+    FQ_UI_TYPE_CHAT_REPLY = 11,
+    FQ_UI_TYPE_QUNCHAT_REPLY = 12,
+    FQ_UI_TYPE_CHAT_SENDOPT = 13,
+    FQ_UI_TYPE_MULTICHAT_SENDOPT = 14,
+    FQ_UI_TYPE_QUNCHAT_SENDOPT = 15,
+    FQ_UI_TYPE_CHAT_PLUGIN = 16,
+    FQ_UI_TYPE_MULTICHAT_PLUGIN = 17,
+    FQ_UI_TYPE_QUNCHAT_PLUGIN = 18,
+    FQ_UI_TYPE_APPBOX_PLUGIN = 19
+};
+
+struct __declspec(uuid("b4e0b06e-9af1-47fb-b825-fe5766cb796e"))
+IFQUICommand : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT OnInvoke (
+        enum FQ_UI_TYPE UIType,
+        long Id,
+        const _variant_t & Parameter );
+    enum FQ_UI_ITEM_STATE OnQueryState (
+        enum FQ_UI_TYPE UIType,
+        long Id,
+        const _variant_t & Parameter,
+        BSTR * Text );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_OnInvoke (
+        enum FQ_UI_TYPE UIType,
+        long Id,
+        VARIANT Parameter ) = 0;
+    virtual HRESULT __stdcall raw_OnQueryState (
+        enum FQ_UI_TYPE UIType,
+        long Id,
+        VARIANT Parameter,
+        BSTR * Text,
+        enum FQ_UI_ITEM_STATE * State ) = 0;
+};
+
+enum FQ_UI_ITEM_STATE
+{
+    FQ_UI_ITEM_STATE_NORMAL = 0,
+    FQ_UI_ITEM_STATE_DISABLED = 1,
+    FQ_UI_ITEM_STATE_CHECKED = 2
+};
+
+enum FQ_SENDDATA_RESULT
+{
+    FQ_MODULE_SEND_DATA_RESULT_OK = 0,
+    FQ_MODULE_SEND_DATA_RESULT_FAILED = -1,
+    FQ_MODULE_SEND_DATA_RESULT_TIME_OUT = -2,
+    FQ_MODULE_SEND_DATA_RESULT_UNKNOWN_ERROR = -3,
+    FQ_MODULE_SEND_DATA_RESULT_NOT_EXIST = -4
+};
+
+enum FQ_BEFORERECVMSG_RESULT
+{
+    FQ_BEFORERECVMSG_RESULT_NORMAL = 0,
+    FQ_BEFORERECVMSG_RESULT_BLOCK_ALL = -1,
+    FQ_BEFORERECVMSG_RESULT_BLOCK_SAVELOG = -2,
+    FQ_BEFORERECVMSG_RESULT_BLOCK_SHOWTIP = -3,
+    FQ_BEFORERECVMSG_RESULT_BLOCK_SAVELOG_SHOWTIP = -4
+};
+
+struct __declspec(uuid("22f47fd2-b84d-443e-ac16-f37b4e519cf2"))
+_IFQRootEvents : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    // Methods:
+    HRESULT OnUserEnter (
+        _bstr_t userMemoName,
+        _bstr_t userNickName,
+        _bstr_t userHostName,
+        _bstr_t userLoginName,
+        _bstr_t userMemoGroupName,
+        _bstr_t userGroupName,
+        _bstr_t userIP,
+        _bstr_t userMAC );
+    HRESULT OnUserExit (
+        _bstr_t userMemoName,
+        _bstr_t userNickName,
+        _bstr_t userHostName,
+        _bstr_t userLoginName,
+        _bstr_t userMemoGroupName,
+        _bstr_t userGroupName,
+        _bstr_t userIP,
+        _bstr_t userMAC );
+    HRESULT OnSkinChange (
+        long clrFrame,
+        long clrFont,
+        long clrLeftTop,
+        long clrRightBtm );
+    HRESULT OnFolderBarChange (
+        long nBeforeBarIndex,
+        long nNowBarIndex );
+    HRESULT OnBeforeRecvMsg (
+        _bstr_t MemoName,
+        _bstr_t HostName,
+        _bstr_t GroupName,
+        _bstr_t IP,
+        _bstr_t Mac,
+        _bstr_t sendMsg,
+        _bstr_t font,
+        enum FQ_BEFORERECVMSG_RESULT * pResult );
+    HRESULT OnLoadModule ( );
+    HRESULT OnUnLoadModule ( );
+    HRESULT OnSkinChange2 (
+        long clrRgb );
+    HRESULT OnMainPanelChange (
+        _bstr_t HidePanelName,
+        long hHideWnd,
+        _bstr_t ShowPanelName,
+        long hShowWnd );
+    HRESULT OnCustomButtonClick (
+        _bstr_t ButtonName );
+    HRESULT OnRootEvent (
+        _bstr_t eventType,
+        _bstr_t Name,
+        _bstr_t sParam,
+        struct IFQData * pData );
+};
+
+struct __declspec(uuid("d48f8738-92db-4ceb-b367-8c5e1b1ab632"))
+_IFQModuleSiteEvents : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    // Methods:
+    HRESULT OnDataReceived (
+        _bstr_t Key );
+    HRESULT OnViewData (
+        _bstr_t Key,
+        _bstr_t Result );
+    HRESULT OnSendDataResult (
+        _bstr_t Sender,
+        _bstr_t Key,
+        enum FQ_SENDDATA_RESULT nResult );
+};
+
+struct __declspec(uuid("a5cac5d2-0527-414b-979f-0faa325646cc"))
+ClientObjectsModule;
+    // [ default ] interface IClientObjectsModule
+
+enum FQ_MENU_ITEM_SEPARATOR
+{
+    FQ_MENU_ITEM_SEPARATOR_NONE = 0,
+    FQ_MENU_ITEM_SEPARATOR_ABOVE = 1,
+    FQ_MENU_ITEM_SEPARATOR_BELOW = 2,
+    FQ_MENU_ITEM_SEPARATOR_ABOVE_AND_BELOW = 3
+};
+
+struct __declspec(uuid("89e013ed-5173-4162-8be8-dca2a2e63f12"))
+_IFQMenuEvents : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    // Methods:
+    HRESULT OnInvoke (
+        enum FQ_UI_TYPE UIType,
+        long Id,
+        const _variant_t & Parameter );
+    HRESULT OnQueryState (
+        enum FQ_UI_TYPE UIType,
+        long Id,
+        const _variant_t & Parameter,
+        BSTR * Text,
+        enum FQ_UI_ITEM_STATE * State );
+};
+
+struct __declspec(uuid("91b88014-9bae-43bc-bb88-24f5939d7f17"))
+IFQFolderBar : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    int AddBar (
+        _bstr_t Name,
+        long pWnd );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_AddBar (
+        BSTR Name,
+        long pWnd,
+        int * pVal ) = 0;
+};
+
+struct __declspec(uuid("d73823df-e0bf-4896-8f27-4d5e28dcf911"))
+IFQUi : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    int AddMainPanel (
+        _bstr_t PanelName,
+        long pWnd );
+    HRESULT ShowMainPanel (
+        _bstr_t PanelName );
+    int AddMainWndButton (
+        _bstr_t ButtonName,
+        _bstr_t ButtonPicPath,
+        _bstr_t ButtonTip );
+    int SkinDialog (
+        long hDlg,
+        long hNoSkinWnd1,
+        long hNoSkinWnd2,
+        long hNoSkinWnd3,
+        long hNoSkinWnd4 );
+    int SkinDialog2 (
+        long hDlg,
+        long hNoSkinWnd1,
+        long hNoSkinWnd2,
+        long hNoSkinWnd3,
+        long hNoSkinWnd4,
+        long hNoSkinWnd5 );
+    int MessageBox (
+        long hWnd,
+        _bstr_t Message,
+        _bstr_t Caption,
+        long Style );
+    HRESULT SkinMenuBegin (
+        _bstr_t MenuName );
+    HRESULT SkinMenuEnd ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_AddMainPanel (
+        BSTR PanelName,
+        long pWnd,
+        int * pVal ) = 0;
+    virtual HRESULT __stdcall raw_ShowMainPanel (
+        BSTR PanelName ) = 0;
+    virtual HRESULT __stdcall raw_AddMainWndButton (
+        BSTR ButtonName,
+        BSTR ButtonPicPath,
+        BSTR ButtonTip,
+        int * pbSuccess ) = 0;
+    virtual HRESULT __stdcall raw_SkinDialog (
+        long hDlg,
+        long hNoSkinWnd1,
+        long hNoSkinWnd2,
+        long hNoSkinWnd3,
+        long hNoSkinWnd4,
+        int * pbSuccess ) = 0;
+    virtual HRESULT __stdcall raw_SkinDialog2 (
+        long hDlg,
+        long hNoSkinWnd1,
+        long hNoSkinWnd2,
+        long hNoSkinWnd3,
+        long hNoSkinWnd4,
+        long hNoSkinWnd5,
+        int * pbSuccess ) = 0;
+    virtual HRESULT __stdcall raw_MessageBox (
+        long hWnd,
+        BSTR Message,
+        BSTR Caption,
+        long Style,
+        int * pnRet ) = 0;
+    virtual HRESULT __stdcall raw_SkinMenuBegin (
+        BSTR MenuName ) = 0;
+    virtual HRESULT __stdcall raw_SkinMenuEnd ( ) = 0;
+};
+
+struct __declspec(uuid("130a07f6-648c-4877-ac88-c0574bf5387b"))
+IFQCalendar : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT IsLeapYear (
+        long nYear,
+        VARIANT_BOOL * pVal );
+    HRESULT WeekDay (
+        long nYear,
+        long nMonth,
+        long nDay,
+        long * pVal );
+    HRESULT MonthDays (
+        long nYear,
+        long nMonth,
+        long * pVal );
+    HRESULT LunarMonthDays (
+        long nLunarYear,
+        long nLunarMonth,
+        long * pVal );
+    HRESULT LunarYearDays (
+        long nLunarYear,
+        long * pVal );
+    HRESULT GetLeapMonth (
+        long nLunarYear,
+        long * pVal );
+    HRESULT FormatLunarYear (
+        long nYear,
+        BSTR * pVal );
+    HRESULT FormatMonth (
+        long nMonth,
+        VARIANT_BOOL bLunar,
+        BSTR * pVal );
+    HRESULT FormatLunarDay (
+        long nDay,
+        BSTR * pVal );
+    HRESULT CalcDateDiff (
+        long nEndYear,
+        long nEndMonth,
+        long nEndDay,
+        long nStartYear,
+        long nStartMonth,
+        long nStartDay,
+        long * pVal );
+    HRESULT GetLunarDate (
+        long nYear,
+        long nMonth,
+        long nDay,
+        long * nLunarYear,
+        long * nLunarMonth,
+        long * nLunarDay,
+        long * pVal );
+    HRESULT GetCalendarDate (
+        long nLunarYear,
+        long nLunarMonth,
+        long nLunarDay,
+        long * nYear,
+        long * nMonth,
+        long * nDay );
+    HRESULT CalcSpansLunarDate (
+        long nSpanDays,
+        long * nLunarYear,
+        long * nLunarMonth,
+        long * nLunarDay );
+    HRESULT CalcLunarDateDiff (
+        long nLunarYear,
+        long nLunarMonth,
+        long nLunarDay,
+        long * pVal );
+    HRESULT CalcSpansCalendarData (
+        long nSpanDays,
+        long * nYear,
+        long * nMonth,
+        long * nDay );
+    HRESULT GetLunarHolDay (
+        long nLunarYear,
+        long nLunarMonth,
+        long nLunarDay,
+        long * pVal );
+    HRESULT FormatDayInfo (
+        long nYear,
+        long nMonth,
+        long nDay,
+        VARIANT_BOOL * bHolDay,
+        BSTR * pVal );
+    HRESULT GetDayPlan (
+        long nYear,
+        long nMonth,
+        long nDay,
+        BSTR * bstrPlan );
+    HRESULT SetDayPlan (
+        long nYear,
+        long nMonth,
+        long nDay,
+        _bstr_t bstrPlan,
+        VARIANT_BOOL bSaveImmediate );
+    HRESULT DelDayPlan (
+        long nYear,
+        long nMonth,
+        long nDay,
+        VARIANT_BOOL bSaveImmediate );
+    HRESULT GetDayAllClockTimes (
+        long nYear,
+        long nMonth,
+        long nDay,
+        BSTR * bstrClockTimes );
+    HRESULT GetDayClock (
+        long nYear,
+        long nMonth,
+        long nDay,
+        long nHour,
+        long nMinute,
+        long nSecond,
+        VARIANT_BOOL * bTip,
+        BSTR * bstrTip,
+        VARIANT_BOOL * bRun,
+        BSTR * bstrRun,
+        BSTR * bstrParam,
+        long * nStatus );
+    HRESULT SetDayClock (
+        long nYear,
+        long nMonth,
+        long nDay,
+        long nHour,
+        long nMinute,
+        long nSecond,
+        VARIANT_BOOL bTip,
+        _bstr_t bstrTip,
+        VARIANT_BOOL bRun,
+        _bstr_t bstrRun,
+        _bstr_t bstrParam,
+        VARIANT_BOOL bSaveImmediate );
+    HRESULT DelDayClock (
+        long nYear,
+        long nMonth,
+        long nDay,
+        long nHour,
+        long nMinute,
+        long nSecond,
+        VARIANT_BOOL bSaveImmediate );
+    HRESULT UpdateDay (
+        long nYear,
+        long nMonth,
+        long nDay );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_IsLeapYear (
+        long nYear,
+        VARIANT_BOOL * pVal ) = 0;
+    virtual HRESULT __stdcall raw_WeekDay (
+        long nYear,
+        long nMonth,
+        long nDay,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall raw_MonthDays (
+        long nYear,
+        long nMonth,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall raw_LunarMonthDays (
+        long nLunarYear,
+        long nLunarMonth,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall raw_LunarYearDays (
+        long nLunarYear,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall raw_GetLeapMonth (
+        long nLunarYear,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall raw_FormatLunarYear (
+        long nYear,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_FormatMonth (
+        long nMonth,
+        VARIANT_BOOL bLunar,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_FormatLunarDay (
+        long nDay,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_CalcDateDiff (
+        long nEndYear,
+        long nEndMonth,
+        long nEndDay,
+        long nStartYear,
+        long nStartMonth,
+        long nStartDay,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall raw_GetLunarDate (
+        long nYear,
+        long nMonth,
+        long nDay,
+        long * nLunarYear,
+        long * nLunarMonth,
+        long * nLunarDay,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall raw_GetCalendarDate (
+        long nLunarYear,
+        long nLunarMonth,
+        long nLunarDay,
+        long * nYear,
+        long * nMonth,
+        long * nDay ) = 0;
+    virtual HRESULT __stdcall raw_CalcSpansLunarDate (
+        long nSpanDays,
+        long * nLunarYear,
+        long * nLunarMonth,
+        long * nLunarDay ) = 0;
+    virtual HRESULT __stdcall raw_CalcLunarDateDiff (
+        long nLunarYear,
+        long nLunarMonth,
+        long nLunarDay,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall raw_CalcSpansCalendarData (
+        long nSpanDays,
+        long * nYear,
+        long * nMonth,
+        long * nDay ) = 0;
+    virtual HRESULT __stdcall raw_GetLunarHolDay (
+        long nLunarYear,
+        long nLunarMonth,
+        long nLunarDay,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall raw_FormatDayInfo (
+        long nYear,
+        long nMonth,
+        long nDay,
+        VARIANT_BOOL * bHolDay,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_GetDayPlan (
+        long nYear,
+        long nMonth,
+        long nDay,
+        BSTR * bstrPlan ) = 0;
+    virtual HRESULT __stdcall raw_SetDayPlan (
+        long nYear,
+        long nMonth,
+        long nDay,
+        BSTR bstrPlan,
+        VARIANT_BOOL bSaveImmediate ) = 0;
+    virtual HRESULT __stdcall raw_DelDayPlan (
+        long nYear,
+        long nMonth,
+        long nDay,
+        VARIANT_BOOL bSaveImmediate ) = 0;
+    virtual HRESULT __stdcall raw_GetDayAllClockTimes (
+        long nYear,
+        long nMonth,
+        long nDay,
+        BSTR * bstrClockTimes ) = 0;
+    virtual HRESULT __stdcall raw_GetDayClock (
+        long nYear,
+        long nMonth,
+        long nDay,
+        long nHour,
+        long nMinute,
+        long nSecond,
+        VARIANT_BOOL * bTip,
+        BSTR * bstrTip,
+        VARIANT_BOOL * bRun,
+        BSTR * bstrRun,
+        BSTR * bstrParam,
+        long * nStatus ) = 0;
+    virtual HRESULT __stdcall raw_SetDayClock (
+        long nYear,
+        long nMonth,
+        long nDay,
+        long nHour,
+        long nMinute,
+        long nSecond,
+        VARIANT_BOOL bTip,
+        BSTR bstrTip,
+        VARIANT_BOOL bRun,
+        BSTR bstrRun,
+        BSTR bstrParam,
+        VARIANT_BOOL bSaveImmediate ) = 0;
+    virtual HRESULT __stdcall raw_DelDayClock (
+        long nYear,
+        long nMonth,
+        long nDay,
+        long nHour,
+        long nMinute,
+        long nSecond,
+        VARIANT_BOOL bSaveImmediate ) = 0;
+    virtual HRESULT __stdcall raw_UpdateDay (
+        long nYear,
+        long nMonth,
+        long nDay ) = 0;
+};
+
+struct __declspec(uuid("b8ce4d69-9327-4ba4-a8cc-ea677951dcf7"))
+IFQTools : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _bstr_t BuildGUID ( );
+    _bstr_t RunCommand (
+        _bstr_t bstrCommand,
+        _bstr_t bstrParam );
+    _bstr_t MakeSpellCode (
+        _bstr_t bstrText,
+        long nMode );
+    _bstr_t Md5Encode (
+        _bstr_t bstrInput );
+    long ColorHSB (
+        long clrInput );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_BuildGUID (
+        BSTR * bstrGUID ) = 0;
+    virtual HRESULT __stdcall raw_RunCommand (
+        BSTR bstrCommand,
+        BSTR bstrParam,
+        BSTR * bstrResult ) = 0;
+    virtual HRESULT __stdcall raw_MakeSpellCode (
+        BSTR bstrText,
+        long nMode,
+        BSTR * bstrResult ) = 0;
+    virtual HRESULT __stdcall raw_Md5Encode (
+        BSTR bstrInput,
+        BSTR * bstrResult ) = 0;
+    virtual HRESULT __stdcall raw_ColorHSB (
+        long clrInput,
+        long * pclrResult ) = 0;
+};
+
+struct __declspec(uuid("1d9e31f3-04fb-4cef-98d4-dfaab65288d3"))
+IApplication : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetFQRoot))
+    IFQRootPtr FQRoot;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    IFQRootPtr GetFQRoot ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_FQRoot (
+        struct IFQRoot * * pVal ) = 0;
+};
+
+struct __declspec(uuid("c4ab3843-3548-4e73-b99d-620df075bb32"))
+FQData;
+    // [ default ] interface IFQData
+
+struct __declspec(uuid("b76352a6-61e3-481a-a219-9b50dab47f80"))
+FQDataCollection;
+    // [ default ] interface IFQDataCollection
+
+struct __declspec(uuid("39af7a0c-f38a-420f-9611-6c848375977b"))
+FQBuddyCollection;
+    // [ default ] interface IFQBuddyCollection
+
+struct __declspec(uuid("78669512-a747-4933-8dec-6c1196599bfb"))
+FQBuddy;
+    // [ default ] interface IFQBuddy
+
+struct __declspec(uuid("cbafffa3-8012-4e65-902c-9df4360bfc3b"))
+FQFolderBar;
+    // [ default ] interface IFQFolderBar
+
+struct __declspec(uuid("b6620960-3908-4fe6-b347-9744eef0abe2"))
+FQUi;
+    // [ default ] interface IFQUi
+
+struct __declspec(uuid("88118872-fa84-4324-bd58-8a804abb339d"))
+FQCalendar;
+    // [ default ] interface IFQCalendar
+
+struct __declspec(uuid("1129492b-be39-4f68-9fb2-954a15642ce6"))
+FQTools;
+    // [ default ] interface IFQTools
+
+struct __declspec(uuid("0525c8be-6cca-4af7-b72a-1d81756978f0"))
+Application;
+    // [ default ] interface IApplication
+
+struct __declspec(uuid("be8bcab3-73d7-4316-872e-2c776302ecd4"))
+FQRoot;
+    // [ default ] interface IFQRoot
+    // [ default, source ] dispinterface _IFQRootEvents
+
+struct __declspec(uuid("74d9bfb4-096a-4de2-9f2d-bd6a0f187e72"))
+FQModuleSite;
+    // [ default ] interface IFQModuleSite
+    // [ default, source ] dispinterface _IFQModuleSiteEvents
+
+struct __declspec(uuid("97819bf3-8e21-477c-9162-5aed70e4155a"))
+FQMenu;
+    // [ default ] interface IFQMenu
+    // [ default, source ] dispinterface _IFQMenuEvents
+
+//
+// Named GUID constants initializations
+//
+
+extern "C" const GUID __declspec(selectany) LIBID_FeiQLib =
+    {0x83863943,0x2942,0x4480,{0x83,0xcf,0xce,0x99,0xe5,0x65,0x58,0x01}};
+extern "C" const GUID __declspec(selectany) IID_IFQRoot =
+    {0xd9f81b17,0xc3dc,0x4ae6,{0x95,0x83,0x53,0x8e,0xe3,0xcd,0x6e,0x41}};
+extern "C" const GUID __declspec(selectany) IID_IFQBuddyCollection =
+    {0x8f49418b,0xb865,0x458b,{0xa9,0xc7,0xd6,0xda,0x6e,0x71,0x16,0x4b}};
+extern "C" const GUID __declspec(selectany) IID_IFQBuddy =
+    {0x5a049b46,0x8a6e,0x4abd,{0xa8,0xe0,0x56,0x55,0xbc,0x23,0x50,0xf4}};
+extern "C" const GUID __declspec(selectany) IID_IFQData =
+    {0x6971785d,0x30f9,0x4646,{0xa5,0xe2,0x25,0xba,0xcf,0x35,0x09,0x55}};
+extern "C" const GUID __declspec(selectany) IID_IFQDataCollection =
+    {0xb4a4052f,0x38e6,0x4883,{0xab,0xea,0xa1,0x1f,0x4a,0x62,0x43,0x2b}};
+extern "C" const GUID __declspec(selectany) IID_IFQModule =
+    {0x16036251,0x4675,0x43db,{0xa5,0x00,0x66,0x9b,0xb0,0x07,0xa5,0x18}};
+extern "C" const GUID __declspec(selectany) IID_IFQModuleSite =
+    {0x0a362156,0xc813,0x4f07,{0xa8,0x09,0x0d,0xd9,0xa9,0x17,0xb8,0xe6}};
+extern "C" const GUID __declspec(selectany) IID_IClientObjectsModule =
+    {0x895766c5,0xf022,0x4097,{0x95,0x41,0x8b,0x27,0x8e,0x83,0xff,0xad}};
+extern "C" const GUID __declspec(selectany) IID_IFQMenu =
+    {0x1375ad4b,0x09bc,0x4e76,{0x8f,0x5b,0x37,0xeb,0xeb,0x2d,0x63,0x66}};
+extern "C" const GUID __declspec(selectany) IID_IFQUICommand =
+    {0xb4e0b06e,0x9af1,0x47fb,{0xb8,0x25,0xfe,0x57,0x66,0xcb,0x79,0x6e}};
+extern "C" const GUID __declspec(selectany) DIID__IFQRootEvents =
+    {0x22f47fd2,0xb84d,0x443e,{0xac,0x16,0xf3,0x7b,0x4e,0x51,0x9c,0xf2}};
+extern "C" const GUID __declspec(selectany) DIID__IFQModuleSiteEvents =
+    {0xd48f8738,0x92db,0x4ceb,{0xb3,0x67,0x8c,0x5e,0x1b,0x1a,0xb6,0x32}};
+extern "C" const GUID __declspec(selectany) CLSID_ClientObjectsModule =
+    {0xa5cac5d2,0x0527,0x414b,{0x97,0x9f,0x0f,0xaa,0x32,0x56,0x46,0xcc}};
+extern "C" const GUID __declspec(selectany) DIID__IFQMenuEvents =
+    {0x89e013ed,0x5173,0x4162,{0x8b,0xe8,0xdc,0xa2,0xa2,0xe6,0x3f,0x12}};
+extern "C" const GUID __declspec(selectany) IID_IFQFolderBar =
+    {0x91b88014,0x9bae,0x43bc,{0xbb,0x88,0x24,0xf5,0x93,0x9d,0x7f,0x17}};
+extern "C" const GUID __declspec(selectany) IID_IFQUi =
+    {0xd73823df,0xe0bf,0x4896,{0x8f,0x27,0x4d,0x5e,0x28,0xdc,0xf9,0x11}};
+extern "C" const GUID __declspec(selectany) IID_IFQCalendar =
+    {0x130a07f6,0x648c,0x4877,{0xac,0x88,0xc0,0x57,0x4b,0xf5,0x38,0x7b}};
+extern "C" const GUID __declspec(selectany) IID_IFQTools =
+    {0xb8ce4d69,0x9327,0x4ba4,{0xa8,0xcc,0xea,0x67,0x79,0x51,0xdc,0xf7}};
+extern "C" const GUID __declspec(selectany) IID_IApplication =
+    {0x1d9e31f3,0x04fb,0x4cef,{0x98,0xd4,0xdf,0xaa,0xb6,0x52,0x88,0xd3}};
+extern "C" const GUID __declspec(selectany) CLSID_FQData =
+    {0xc4ab3843,0x3548,0x4e73,{0xb9,0x9d,0x62,0x0d,0xf0,0x75,0xbb,0x32}};
+extern "C" const GUID __declspec(selectany) CLSID_FQDataCollection =
+    {0xb76352a6,0x61e3,0x481a,{0xa2,0x19,0x9b,0x50,0xda,0xb4,0x7f,0x80}};
+extern "C" const GUID __declspec(selectany) CLSID_FQBuddyCollection =
+    {0x39af7a0c,0xf38a,0x420f,{0x96,0x11,0x6c,0x84,0x83,0x75,0x97,0x7b}};
+extern "C" const GUID __declspec(selectany) CLSID_FQBuddy =
+    {0x78669512,0xa747,0x4933,{0x8d,0xec,0x6c,0x11,0x96,0x59,0x9b,0xfb}};
+extern "C" const GUID __declspec(selectany) CLSID_FQFolderBar =
+    {0xcbafffa3,0x8012,0x4e65,{0x90,0x2c,0x9d,0xf4,0x36,0x0b,0xfc,0x3b}};
+extern "C" const GUID __declspec(selectany) CLSID_FQUi =
+    {0xb6620960,0x3908,0x4fe6,{0xb3,0x47,0x97,0x44,0xee,0xf0,0xab,0xe2}};
+extern "C" const GUID __declspec(selectany) CLSID_FQCalendar =
+    {0x88118872,0xfa84,0x4324,{0xbd,0x58,0x8a,0x80,0x4a,0xbb,0x33,0x9d}};
+extern "C" const GUID __declspec(selectany) CLSID_FQTools =
+    {0x1129492b,0xbe39,0x4f68,{0x9f,0xb2,0x95,0x4a,0x15,0x64,0x2c,0xe6}};
+extern "C" const GUID __declspec(selectany) CLSID_Application =
+    {0x0525c8be,0x6cca,0x4af7,{0xb7,0x2a,0x1d,0x81,0x75,0x69,0x78,0xf0}};
+extern "C" const GUID __declspec(selectany) CLSID_FQRoot =
+    {0xbe8bcab3,0x73d7,0x4316,{0x87,0x2e,0x2c,0x77,0x63,0x02,0xec,0xd4}};
+extern "C" const GUID __declspec(selectany) CLSID_FQModuleSite =
+    {0x74d9bfb4,0x096a,0x4de2,{0x9f,0x2d,0xbd,0x6a,0x0f,0x18,0x7e,0x72}};
+extern "C" const GUID __declspec(selectany) CLSID_FQMenu =
+    {0x97819bf3,0x8e21,0x477c,{0x91,0x62,0x5a,0xed,0x70,0xe4,0x15,0x5a}};
+
+//
+// Wrapper method implementations
+//
+
+#include "FeiQ.tli"
+
+#pragma pack(pop)

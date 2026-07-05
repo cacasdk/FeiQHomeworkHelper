@@ -2,68 +2,84 @@
 # -*- coding: utf-8 -*-
 
 """
-飞秋消息抓取模块 - 基于消息文件(feiq.fql)
-简化版：只处理GBK编码的文本消息
+飞秋消息抓取模块 - 基于 HTTP 服务器接收 C++ 插件推送
 """
 
+import queue
+import threading
 from pathlib import Path
-from typing import Dict, Any
+from typing import Dict, Any, Optional
+
+from flask import Flask, request
 
 from utils.logging_helper import setup_logger
 
-class FeiQMessageCapture:
-    """飞秋消息抓取类 - 基于消息文件(feiq.fql) - 简化版，只处理GBK编码的文本消息"""
 
-    @staticmethod
-    def _resolve_path(root_dir: Path, raw_path: str) -> Path:
-        p = Path(raw_path)
-        if p.is_absolute():
-            return p
-        return root_dir / p
+class FeiQMessageCapture:
+    """飞秋消息抓取类 - 基于 HTTP 服务器接收 C++ 插件推送"""
 
     def __init__(self, config: Dict[str, Any]) -> None:
         """初始化飞秋消息抓取器
 
         Args:
-            config: 配置信息，含 root_dir (Path) 用于解析相对路径
+            config: 配置信息，含 server_host, server_port, max_cache_size 等
         """
         self.logger = setup_logger('FeiQMessageCapture', 'feiq')
 
-        root_dir = config.get('root_dir', Path(__file__).parent.parent.parent)
-        raw_path = config.get('log_file_path', '')
-        self.message_file_path: str = str(self._resolve_path(root_dir, raw_path)) if raw_path else ''
-        self.message_file_encoding: str = config.get('log_file_encoding', 'gbk')
-
-        # 消息存储
-        self.message_cache: list = []
+        # HTTP 服务器配置
+        self.server_host: str = config.get('server_host', '127.0.0.1')
+        self.server_port: int = config.get('server_port', 51914)
         self.max_cache_size: int = config.get('max_cache_size', 100)
-        self.last_file_size: int = 0
-        self.logger.info(f"飞秋消息抓取器(简化版消息文件模式)初始化完成，消息文件: {self.message_file_path}，编码: {self.message_file_encoding}")
 
-        # 初始化时检查消息文件
-        self.check_message_file()
+        # 消息队列（线程安全）
+        self.message_queue: queue.Queue = queue.Queue(maxsize=self.max_cache_size)
 
-    def check_message_file(self) -> bool:
-        """检查消息文件是否存在并获取初始大小
+        # 创建 Flask 应用
+        self._app: Flask = self._create_flask_app()
 
-        Returns:
-            消息文件是否存在且可访问
-        """
-        # 检查消息文件是否存在
-        if not self.message_file_path:
-            self.logger.error("未指定飞秋消息文件路径")
-            return False
+        # 服务器线程
+        self._server_thread: Optional[threading.Thread] = None
 
-        message_file = Path(self.message_file_path)
-        if not message_file.exists():
-            self.logger.error(f"飞秋消息文件不存在: {self.message_file_path}")
-            return False
+        # 启动 HTTP 服务器
+        self._start_server()
 
-        # 获取文件大小，用于后续增量读取
-        self.last_file_size = message_file.stat().st_size
-        self.logger.info(f"飞秋消息文件大小: {self.last_file_size} 字节")
+        self.logger.info(f"飞秋消息抓取器 (HTTP 服务器模式) 初始化完成，监听地址：http://{self.server_host}:{self.server_port}")
 
-        return True
+    def _create_flask_app(self) -> Flask:
+        """创建 Flask 应用"""
+        app = Flask(__name__)
+
+        @app.route('/msg', methods=['POST'])
+        def handle_msg():
+            """处理 C++ 插件推送的消息"""
+            sender = request.form.get('sender', '')
+            msg = request.form.get('msg', '')
+
+            if sender and msg:
+                # 放入队列
+                try:
+                    self.message_queue.put_nowait({'sender': sender, 'msg': msg})
+                    self.logger.debug(f"收到消息：{sender}: {msg}")
+                except queue.Full:
+                    self.logger.warning("消息队列已满，丢弃旧消息")
+
+            return 'OK'
+
+        return app
+
+    def _start_server(self) -> None:
+        """在后台线程启动 Flask 服务器"""
+        def run_server():
+            self._app.run(
+                host=self.server_host,
+                port=self.server_port,
+                debug=False,
+                use_reloader=False,  # 禁用重载器
+                threaded=True
+            )
+
+        self._server_thread = threading.Thread(target=run_server, daemon=True)
+        self._server_thread.start()
 
     def capture(self) -> str:
         """
@@ -72,55 +88,9 @@ class FeiQMessageCapture:
         Returns:
             捕获到的新消息文本内容，如果没有新内容则返回空字符串
         """
-        max_retries = 3
-        for _ in range(max_retries):
-            try:
-                # 检查消息文件是否存在
-                message_file = Path(self.message_file_path)
-                if not message_file.exists():
-                    self.logger.error(f"飞秋消息文件不存在: {self.message_file_path}")
-                    return ""
-
-                # 获取当前文件大小
-                current_size = message_file.stat().st_size
-
-                # 处理文件大小变化情况
-                if current_size < self.last_file_size:
-                    # 文件可能被截断或重新创建，重置文件大小并从头开始读取
-                    self.logger.warning(f"文件大小减小 (从 {self.last_file_size} 到 {current_size} 字节)，可能被截断或重新创建")
-                    self.last_file_size = max(0, current_size - 500)
-                    continue
-                elif current_size == self.last_file_size:
-                    # 文件大小没有变化，没有新消息
-                    return ""
-
-                # 读取新增内容
-                with open(message_file, 'rb') as f:
-                    # 定位到上次读取的位置
-                    f.seek(self.last_file_size)
-                    # 读取新增内容
-                    new_content = f.read()
-
-                # 更新文件大小
-                self.last_file_size = current_size
-
-                # 解析新增内容 - 只处理GBK编码的文本消息，直接返回文本
-                try:
-                    # 尝试解码内容并直接返回文本
-                    new_content_text = new_content.decode(self.message_file_encoding, errors='replace')
-                except Exception as e:
-                    self.logger.error(f"解析消息内容异常: {e}", exc_info=True)
-                    return ""
-
-                # 如果有新内容，记录日志
-                if new_content_text:
-                    self.logger.info(f"从消息文件中捕获到新内容，长度: {len(new_content_text)} 字符")
-                return new_content_text
-
-            except Exception as e:
-                self.logger.error(f"捕获消息异常: {e}", exc_info=True)
-                return ""
-
-        # 超过最大重试次数，放弃本次捕获
-        self.logger.error(f"文件截断重试超过最大次数({max_retries})，放弃本次捕获")
-        return ""
+        try:
+            # 非阻塞获取
+            message_data = self.message_queue.get_nowait()
+            return f"{message_data['sender']}: {message_data['msg']}"
+        except queue.Empty:
+            return ""

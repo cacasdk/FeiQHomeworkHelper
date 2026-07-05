@@ -5,21 +5,20 @@ general:
   # 轮询间隔（秒）
   polling_interval: 5
 
-# 飞秋消息抓取配置 (消息文件模式)
+# 飞秋消息抓取配置 (HTTP 服务器模式)
 feiq:
-  # 日志文件路径 (feiq.fql文件路径，相对项目根目录或绝对路径)
-  log_file_path: "c:\\Program Files\\feiq\\feiq.fql"
-  # 日志文件编码
-  log_file_encoding: "gbk"
-  # 消息缓存大小（用于去重）
+  # HTTP 服务器监听地址
+  server_host: "127.0.0.1"
+  # HTTP 服务器监听端口（需与 C++ 插件一致）
+  server_port: 51914
+  # 消息缓存大小
   max_cache_size: 100
 
-# AI处理配置
+# AI 处理配置
 ai:
-
-  # API密钥（也可以通过环境变量OPENAI_API_KEY设置）
+  # API 密钥（也可以通过环境变量 OPENAI_API_KEY 设置）
   api_key: ""
-  # API端点
+  # API 端点
   api_endpoint: "https://api.openai.com/v1"
   # 模型名称
   model: "gpt-3.5-turbo"
@@ -27,14 +26,14 @@ ai:
   temperature: 0.3
   # 最大生成令牌数
   max_tokens: 1000
-  # 系统提示词 - 可填写文件路径(相对项目根目录)或纯文本，留空则使用 config/default_prompt.txt
+  # 系统提示词 - 可填写文件路径 (相对项目根目录) 或纯文本，留空则使用 config/default_prompt.txt
   system_prompt: "config/default_prompt.txt"
   # 最大重试次数
   max_retries: 3
   # 重试延迟（秒）
   retry_delay: 2
 
-# Markdown文件处理配置
+# Markdown 文件处理配置
 markdown:
   # 目标文件路径 (相对项目根目录或绝对路径)
   file_path: "homework.md"

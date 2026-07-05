@@ -1,0 +1,44 @@
+// FeiQVersionView.odl : type library source for FeiQVersionView.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (FeiQVersionView.tlb).
+
+[ uuid(7418a42c-589f-41e4-a5f4-e08aa5a19354), version(1.0) ]
+library FeiQVersionView
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+	importlib("..\tlb\FeiQ.tlb");
+
+
+
+	//  Primary dispatch interface for CFeiQVersionViewModule
+	
+	[ uuid(e4ac2f5c-7066-466f-87df-af0ef4885405) ]
+	dispinterface IFeiQVersionViewModule
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CFeiQVersionViewModule)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CFeiQVersionViewModule)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CFeiQVersionViewModule
+
+	[ uuid(fd8bc272-1b6d-4738-9d25-8ec0db2e78d2) ]
+	coclass FeiQVersionViewModule
+	{
+		[default] dispinterface IFeiQVersionViewModule;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

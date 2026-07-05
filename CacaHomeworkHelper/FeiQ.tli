@@ -1,0 +1,1019 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.9782.0 (144bcf87).
+//
+// FeiQ.tli
+//
+// Wrapper implementations for Win32 type library ..\tlb\FeiQ.tlb
+// compiler-generated file created 04/16/13 at 15:56:25 - DO NOT EDIT!
+
+#pragma once
+
+//
+// interface IFQRoot wrapper method implementations
+//
+
+inline IDispatchPtr IFQRoot::GetModule ( _bstr_t Identifier ) {
+    IDispatch * _result;
+    HRESULT _hr = get_Module(Identifier, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IDispatchPtr(_result, false);
+}
+
+inline _bstr_t IFQRoot::GetVersion ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Version(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline IFQBuddyCollectionPtr IFQRoot::GetOnlineBuddys ( ) {
+    struct IFQBuddyCollection * _result;
+    HRESULT _hr = get_OnlineBuddys(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IFQBuddyCollectionPtr(_result, false);
+}
+
+inline IFQBuddyCollectionPtr IFQRoot::GetGroupBuddys ( _bstr_t GroupName, VARIANT_BOOL bAutoGroup ) {
+    struct IFQBuddyCollection * _result;
+    HRESULT _hr = get_GroupBuddys(GroupName, bAutoGroup, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IFQBuddyCollectionPtr(_result, false);
+}
+
+inline IFQBuddyPtr IFQRoot::GetUserBuddy ( _bstr_t UserIPValue ) {
+    struct IFQBuddy * _result;
+    HRESULT _hr = get_UserBuddy(UserIPValue, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IFQBuddyPtr(_result, false);
+}
+
+inline IFQDataPtr IFQRoot::GetUserCustomConfig ( ) {
+    struct IFQData * _result;
+    HRESULT _hr = get_UserCustomConfig(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IFQDataPtr(_result, false);
+}
+
+inline _bstr_t IFQRoot::GetCurWorkDirectory ( ) {
+    BSTR _result;
+    HRESULT _hr = get_CurWorkDirectory(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline HRESULT IFQRoot::SendBuddyMessage ( _bstr_t sendBuddyIPs, _bstr_t sendContent, _bstr_t sendFiles ) {
+    HRESULT _hr = raw_SendBuddyMessage(sendBuddyIPs, sendContent, sendFiles);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline _bstr_t IFQRoot::UserSelector ( _bstr_t DlgCaption, _bstr_t InitSelBuddys, _bstr_t SelGroupName, long NeedSelNum, VARIANT_BOOL bMustUseFeiQ ) {
+    BSTR _result;
+    HRESULT _hr = raw_UserSelector(DlgCaption, InitSelBuddys, SelGroupName, NeedSelNum, bMustUseFeiQ, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline HRESULT IFQRoot::ShowBuddyChatDialog ( _bstr_t sendBuddyIP ) {
+    HRESULT _hr = raw_ShowBuddyChatDialog(sendBuddyIP);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IFQRoot::RefreshBuddys ( ) {
+    HRESULT _hr = raw_RefreshBuddys();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline long IFQRoot::GetMainWndHandle ( ) {
+    long _result;
+    HRESULT _hr = get_MainWndHandle(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IFQRoot::GetMySelfInfo ( BSTR * UserName, BSTR * HostName, BSTR * IPValue, BSTR * Mac, long * nPortNo ) {
+    HRESULT _hr = raw_GetMySelfInfo(UserName, HostName, IPValue, Mac, nPortNo);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline IFQDataPtr IFQRoot::SendMessage ( _bstr_t MsgType, _bstr_t MsgName, _bstr_t sParam, struct IFQData * pData ) {
+    struct IFQData * _result;
+    HRESULT _hr = raw_SendMessage(MsgType, MsgName, sParam, pData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IFQDataPtr(_result, false);
+}
+
+inline IFQDataPtr IFQRoot::GetGlobalData ( ) {
+    struct IFQData * _result;
+    HRESULT _hr = get_GlobalData(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IFQDataPtr(_result, false);
+}
+
+//
+// interface IFQBuddyCollection wrapper method implementations
+//
+
+inline IFQBuddyPtr IFQBuddyCollection::GetItem ( long Index ) {
+    struct IFQBuddy * _result;
+    HRESULT _hr = get_Item(Index, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IFQBuddyPtr(_result, false);
+}
+
+inline long IFQBuddyCollection::GetCount ( ) {
+    long _result;
+    HRESULT _hr = get_Count(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IFQBuddyCollection::Add ( struct IFQBuddy * pFQBuddy ) {
+    HRESULT _hr = raw_Add(pFQBuddy);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IFQBuddyCollection::Remove ( long Index ) {
+    HRESULT _hr = raw_Remove(Index);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IFQBuddy wrapper method implementations
+//
+
+inline _bstr_t IFQBuddy::GetMarkName ( ) {
+    BSTR _result;
+    HRESULT _hr = get_MarkName(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IFQBuddy::PutMarkName ( _bstr_t pVal ) {
+    HRESULT _hr = put_MarkName(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IFQBuddy::GetName ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Name(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IFQBuddy::PutName ( _bstr_t pVal ) {
+    HRESULT _hr = put_Name(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IFQBuddy::GetMarkGroupName ( ) {
+    BSTR _result;
+    HRESULT _hr = get_MarkGroupName(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IFQBuddy::PutMarkGroupName ( _bstr_t pVal ) {
+    HRESULT _hr = put_MarkGroupName(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IFQBuddy::GetGroupName ( ) {
+    BSTR _result;
+    HRESULT _hr = get_GroupName(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IFQBuddy::PutGroupName ( _bstr_t pVal ) {
+    HRESULT _hr = put_GroupName(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IFQBuddy::GetHostName ( ) {
+    BSTR _result;
+    HRESULT _hr = get_HostName(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IFQBuddy::PutHostName ( _bstr_t pVal ) {
+    HRESULT _hr = put_HostName(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IFQBuddy::GetLoginName ( ) {
+    BSTR _result;
+    HRESULT _hr = get_LoginName(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IFQBuddy::PutLoginName ( _bstr_t pVal ) {
+    HRESULT _hr = put_LoginName(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IFQBuddy::GetMacAddress ( ) {
+    BSTR _result;
+    HRESULT _hr = get_MacAddress(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IFQBuddy::PutMacAddress ( _bstr_t pVal ) {
+    HRESULT _hr = put_MacAddress(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IFQBuddy::GetnPortNo ( ) {
+    long _result;
+    HRESULT _hr = get_nPortNo(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IFQBuddy::PutnPortNo ( long pVal ) {
+    HRESULT _hr = put_nPortNo(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline unsigned long IFQBuddy::GetIPAddress ( ) {
+    unsigned long _result;
+    HRESULT _hr = get_IPAddress(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IFQBuddy::PutIPAddress ( unsigned long pVal ) {
+    HRESULT _hr = put_IPAddress(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IFQBuddy::GetIPValue ( ) {
+    BSTR _result;
+    HRESULT _hr = get_IPValue(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IFQBuddy::PutIPValue ( _bstr_t pVal ) {
+    HRESULT _hr = put_IPValue(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IFQBuddy::GetSign ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Sign(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IFQBuddy::PutSign ( _bstr_t pVal ) {
+    HRESULT _hr = put_Sign(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IFQBuddy::GetFaceImage ( VARIANT_BOOL bLargeIcon ) {
+    long _result;
+    HRESULT _hr = get_FaceImage(bLargeIcon, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IFQBuddy::GetVersion ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Version(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IFQBuddy::PutVersion ( _bstr_t pVal ) {
+    HRESULT _hr = put_Version(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline void IFQBuddy::PutFaceImage ( VARIANT_BOOL bLargeIcon, long pVal ) {
+    HRESULT _hr = put_FaceImage(bLargeIcon, pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+//
+// interface IFQData wrapper method implementations
+//
+
+inline HRESULT IFQData::SetLong ( _bstr_t Key, long Value ) {
+    HRESULT _hr = raw_SetLong(Key, Value);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline long IFQData::GetLong ( _bstr_t Key ) {
+    long _result;
+    HRESULT _hr = raw_GetLong(Key, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IFQData::SetString ( _bstr_t Key, _bstr_t String ) {
+    HRESULT _hr = raw_SetString(Key, String);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline _bstr_t IFQData::GetString ( _bstr_t Key ) {
+    BSTR _result;
+    HRESULT _hr = raw_GetString(Key, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline HRESULT IFQData::SetDouble ( _bstr_t Key, double Value ) {
+    HRESULT _hr = raw_SetDouble(Key, Value);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline double IFQData::GetDouble ( _bstr_t Key ) {
+    double _result;
+    HRESULT _hr = raw_GetDouble(Key, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IFQData::SetBuffer ( _bstr_t Key, unsigned char * Buffer, long Length ) {
+    HRESULT _hr = raw_SetBuffer(Key, Buffer, Length);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline long IFQData::GetBufferLength ( _bstr_t Key ) {
+    long _result;
+    HRESULT _hr = raw_GetBufferLength(Key, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IFQData::GetBuffer ( _bstr_t Key, unsigned char * Buffer, long Length ) {
+    HRESULT _hr = raw_GetBuffer(Key, Buffer, Length);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IFQData::SetFQData ( _bstr_t Key, struct IFQData * FQData ) {
+    HRESULT _hr = raw_SetFQData(Key, FQData);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline IFQDataPtr IFQData::GetFQData ( _bstr_t Key ) {
+    struct IFQData * _result;
+    HRESULT _hr = raw_GetFQData(Key, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IFQDataPtr(_result, false);
+}
+
+inline HRESULT IFQData::SetObject ( _bstr_t Key, IDispatch * Object ) {
+    HRESULT _hr = raw_SetObject(Key, Object);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline IDispatchPtr IFQData::GetObject ( _bstr_t Key ) {
+    IDispatch * _result;
+    HRESULT _hr = raw_GetObject(Key, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IDispatchPtr(_result, false);
+}
+
+inline HRESULT IFQData::SetFQDataCollection ( _bstr_t Key, struct IFQDataCollection * FQDataCollection ) {
+    HRESULT _hr = raw_SetFQDataCollection(Key, FQDataCollection);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline IFQDataCollectionPtr IFQData::GetFQDataCollection ( _bstr_t Key ) {
+    struct IFQDataCollection * _result;
+    HRESULT _hr = raw_GetFQDataCollection(Key, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IFQDataCollectionPtr(_result, false);
+}
+
+inline _bstr_t IFQData::GetXML ( ) {
+    BSTR _result;
+    HRESULT _hr = get_XML(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IFQData::PutXML ( _bstr_t pVal ) {
+    HRESULT _hr = put_XML(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IFQData::GetCount ( ) {
+    long _result;
+    HRESULT _hr = get_Count(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IFQData::GetItem ( int Index, BSTR * Key, VARIANT * Value ) {
+    HRESULT _hr = raw_GetItem(Index, Key, Value);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline VARIANT_BOOL IFQData::RemoveKey ( _bstr_t Key ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = raw_RemoveKey(Key, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _variant_t IFQData::GetStartPosition ( ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_GetStartPosition(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline HRESULT IFQData::GetNextAssoc ( VARIANT * pos, BSTR * Key, VARIANT * Value ) {
+    HRESULT _hr = raw_GetNextAssoc(pos, Key, Value);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IFQDataCollection wrapper method implementations
+//
+
+inline IFQDataPtr IFQDataCollection::GetItem ( long vIndex ) {
+    struct IFQData * _result;
+    HRESULT _hr = get_Item(vIndex, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IFQDataPtr(_result, false);
+}
+
+inline long IFQDataCollection::GetCount ( ) {
+    long _result;
+    HRESULT _hr = get_Count(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IFQDataCollection::Add ( struct IFQData * FQData ) {
+    HRESULT _hr = raw_Add(FQData);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IFQDataCollection::Remove ( long Index ) {
+    HRESULT _hr = raw_Remove(Index);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline _bstr_t IFQDataCollection::GetXML ( ) {
+    BSTR _result;
+    HRESULT _hr = get_XML(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IFQDataCollection::PutXML ( _bstr_t pVal ) {
+    HRESULT _hr = put_XML(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+//
+// interface IFQModule wrapper method implementations
+//
+
+inline _bstr_t IFQModule::GetIdentifier ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Identifier(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IFQModule::GetName ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Name(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IFQModule::GetDescription ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Description(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IFQModule::GetAuthor ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Author(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline IDispatchPtr IFQModule::GetModuleSite ( ) {
+    IDispatch * _result;
+    HRESULT _hr = get_ModuleSite(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IDispatchPtr(_result, false);
+}
+
+inline HRESULT IFQModule::OnLoad ( IDispatch * FQModuleSite ) {
+    HRESULT _hr = raw_OnLoad(FQModuleSite);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IFQModule::OnUnload ( ) {
+    HRESULT _hr = raw_OnUnload();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IFQModule::OnConfig ( ) {
+    HRESULT _hr = raw_OnConfig();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline _bstr_t IFQModule::OnModuleEvent ( _bstr_t eventType, _bstr_t Name, _bstr_t sParam ) {
+    BSTR _result;
+    HRESULT _hr = raw_OnModuleEvent(eventType, Name, sParam, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+//
+// interface IFQModuleSite wrapper method implementations
+//
+
+inline HRESULT IFQModuleSite::SendData ( _bstr_t ReceiversIP, struct IFQData * pData ) {
+    HRESULT _hr = raw_SendData(ReceiversIP, pData);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline IFQDataPtr IFQModuleSite::GetData ( _bstr_t Key, VARIANT_BOOL Remove ) {
+    struct IFQData * _result;
+    HRESULT _hr = raw_GetData(Key, Remove, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IFQDataPtr(_result, false);
+}
+
+inline IFQRootPtr IFQModuleSite::GetFQRoot ( ) {
+    struct IFQRoot * _result;
+    HRESULT _hr = get_FQRoot(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IFQRootPtr(_result, false);
+}
+
+//
+// interface IClientObjectsModule wrapper method implementations
+//
+
+inline IDispatchPtr IClientObjectsModule::GetObject ( _bstr_t Identifier ) {
+    IDispatch * _result;
+    HRESULT _hr = get_Object(Identifier, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IDispatchPtr(_result, false);
+}
+
+//
+// interface IFQMenu wrapper method implementations
+//
+
+inline long IFQMenu::AddItem ( enum FQ_UI_TYPE Type, _bstr_t menuPosName, struct IFQUICommand * FQUICommand, _bstr_t Text, long Level ) {
+    long _result;
+    HRESULT _hr = raw_AddItem(Type, menuPosName, FQUICommand, Text, Level, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IFQMenu::DelItem ( enum FQ_UI_TYPE Type, long Id, struct IFQUICommand * FQUICommand ) {
+    HRESULT _hr = raw_DelItem(Type, Id, FQUICommand);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IFQUICommand wrapper method implementations
+//
+
+inline HRESULT IFQUICommand::OnInvoke ( enum FQ_UI_TYPE UIType, long Id, const _variant_t & Parameter ) {
+    HRESULT _hr = raw_OnInvoke(UIType, Id, Parameter);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline enum FQ_UI_ITEM_STATE IFQUICommand::OnQueryState ( enum FQ_UI_TYPE UIType, long Id, const _variant_t & Parameter, BSTR * Text ) {
+    enum FQ_UI_ITEM_STATE _result;
+    HRESULT _hr = raw_OnQueryState(UIType, Id, Parameter, Text, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+//
+// dispinterface _IFQRootEvents wrapper method implementations
+//
+
+inline HRESULT _IFQRootEvents::OnUserEnter ( _bstr_t userMemoName, _bstr_t userNickName, _bstr_t userHostName, _bstr_t userLoginName, _bstr_t userMemoGroupName, _bstr_t userGroupName, _bstr_t userIP, _bstr_t userMAC ) {
+    HRESULT _result;
+    _com_dispatch_method(this, 0x1, DISPATCH_METHOD, VT_ERROR, (void*)&_result, 
+        L"\x0008\x0008\x0008\x0008\x0008\x0008\x0008\x0008", (BSTR)userMemoName, (BSTR)userNickName, (BSTR)userHostName, (BSTR)userLoginName, (BSTR)userMemoGroupName, (BSTR)userGroupName, (BSTR)userIP, (BSTR)userMAC);
+    return _result;
+}
+
+inline HRESULT _IFQRootEvents::OnUserExit ( _bstr_t userMemoName, _bstr_t userNickName, _bstr_t userHostName, _bstr_t userLoginName, _bstr_t userMemoGroupName, _bstr_t userGroupName, _bstr_t userIP, _bstr_t userMAC ) {
+    HRESULT _result;
+    _com_dispatch_method(this, 0x2, DISPATCH_METHOD, VT_ERROR, (void*)&_result, 
+        L"\x0008\x0008\x0008\x0008\x0008\x0008\x0008\x0008", (BSTR)userMemoName, (BSTR)userNickName, (BSTR)userHostName, (BSTR)userLoginName, (BSTR)userMemoGroupName, (BSTR)userGroupName, (BSTR)userIP, (BSTR)userMAC);
+    return _result;
+}
+
+inline HRESULT _IFQRootEvents::OnSkinChange ( long clrFrame, long clrFont, long clrLeftTop, long clrRightBtm ) {
+    HRESULT _result;
+    _com_dispatch_method(this, 0x3, DISPATCH_METHOD, VT_ERROR, (void*)&_result, 
+        L"\x0003\x0003\x0003\x0003", clrFrame, clrFont, clrLeftTop, clrRightBtm);
+    return _result;
+}
+
+inline HRESULT _IFQRootEvents::OnFolderBarChange ( long nBeforeBarIndex, long nNowBarIndex ) {
+    HRESULT _result;
+    _com_dispatch_method(this, 0x4, DISPATCH_METHOD, VT_ERROR, (void*)&_result, 
+        L"\x0003\x0003", nBeforeBarIndex, nNowBarIndex);
+    return _result;
+}
+
+inline HRESULT _IFQRootEvents::OnBeforeRecvMsg ( _bstr_t MemoName, _bstr_t HostName, _bstr_t GroupName, _bstr_t IP, _bstr_t Mac, _bstr_t sendMsg, _bstr_t font, enum FQ_BEFORERECVMSG_RESULT * pResult ) {
+    HRESULT _result;
+    _com_dispatch_method(this, 0x5, DISPATCH_METHOD, VT_ERROR, (void*)&_result, 
+        L"\x0008\x0008\x0008\x0008\x0008\x0008\x0008\x4003", (BSTR)MemoName, (BSTR)HostName, (BSTR)GroupName, (BSTR)IP, (BSTR)Mac, (BSTR)sendMsg, (BSTR)font, pResult);
+    return _result;
+}
+
+inline HRESULT _IFQRootEvents::OnLoadModule ( ) {
+    HRESULT _result;
+    _com_dispatch_method(this, 0x6, DISPATCH_METHOD, VT_ERROR, (void*)&_result, NULL);
+    return _result;
+}
+
+inline HRESULT _IFQRootEvents::OnUnLoadModule ( ) {
+    HRESULT _result;
+    _com_dispatch_method(this, 0x7, DISPATCH_METHOD, VT_ERROR, (void*)&_result, NULL);
+    return _result;
+}
+
+inline HRESULT _IFQRootEvents::OnSkinChange2 ( long clrRgb ) {
+    HRESULT _result;
+    _com_dispatch_method(this, 0x8, DISPATCH_METHOD, VT_ERROR, (void*)&_result, 
+        L"\x0003", clrRgb);
+    return _result;
+}
+
+inline HRESULT _IFQRootEvents::OnMainPanelChange ( _bstr_t HidePanelName, long hHideWnd, _bstr_t ShowPanelName, long hShowWnd ) {
+    HRESULT _result;
+    _com_dispatch_method(this, 0x9, DISPATCH_METHOD, VT_ERROR, (void*)&_result, 
+        L"\x0008\x0003\x0008\x0003", (BSTR)HidePanelName, hHideWnd, (BSTR)ShowPanelName, hShowWnd);
+    return _result;
+}
+
+inline HRESULT _IFQRootEvents::OnCustomButtonClick ( _bstr_t ButtonName ) {
+    HRESULT _result;
+    _com_dispatch_method(this, 0xa, DISPATCH_METHOD, VT_ERROR, (void*)&_result, 
+        L"\x0008", (BSTR)ButtonName);
+    return _result;
+}
+
+inline HRESULT _IFQRootEvents::OnRootEvent ( _bstr_t eventType, _bstr_t Name, _bstr_t sParam, struct IFQData * pData ) {
+    HRESULT _result;
+    _com_dispatch_method(this, 0xb, DISPATCH_METHOD, VT_ERROR, (void*)&_result, 
+        L"\x0008\x0008\x0008\x0009", (BSTR)eventType, (BSTR)Name, (BSTR)sParam, pData);
+    return _result;
+}
+
+//
+// dispinterface _IFQModuleSiteEvents wrapper method implementations
+//
+
+inline HRESULT _IFQModuleSiteEvents::OnDataReceived ( _bstr_t Key ) {
+    HRESULT _result;
+    _com_dispatch_method(this, 0x1, DISPATCH_METHOD, VT_ERROR, (void*)&_result, 
+        L"\x0008", (BSTR)Key);
+    return _result;
+}
+
+inline HRESULT _IFQModuleSiteEvents::OnViewData ( _bstr_t Key, _bstr_t Result ) {
+    HRESULT _result;
+    _com_dispatch_method(this, 0x2, DISPATCH_METHOD, VT_ERROR, (void*)&_result, 
+        L"\x0008\x0008", (BSTR)Key, (BSTR)Result);
+    return _result;
+}
+
+inline HRESULT _IFQModuleSiteEvents::OnSendDataResult ( _bstr_t Sender, _bstr_t Key, enum FQ_SENDDATA_RESULT nResult ) {
+    HRESULT _result;
+    _com_dispatch_method(this, 0x3, DISPATCH_METHOD, VT_ERROR, (void*)&_result, 
+        L"\x0008\x0008\x0003", (BSTR)Sender, (BSTR)Key, nResult);
+    return _result;
+}
+
+//
+// dispinterface _IFQMenuEvents wrapper method implementations
+//
+
+inline HRESULT _IFQMenuEvents::OnInvoke ( enum FQ_UI_TYPE UIType, long Id, const _variant_t & Parameter ) {
+    HRESULT _result;
+    _com_dispatch_method(this, 0x1, DISPATCH_METHOD, VT_ERROR, (void*)&_result, 
+        L"\x0003\x0003\x000c", UIType, Id, &Parameter);
+    return _result;
+}
+
+inline HRESULT _IFQMenuEvents::OnQueryState ( enum FQ_UI_TYPE UIType, long Id, const _variant_t & Parameter, BSTR * Text, enum FQ_UI_ITEM_STATE * State ) {
+    HRESULT _result;
+    _com_dispatch_method(this, 0x2, DISPATCH_METHOD, VT_ERROR, (void*)&_result, 
+        L"\x0003\x0003\x000c\x4008\x4003", UIType, Id, &Parameter, Text, State);
+    return _result;
+}
+
+//
+// interface IFQFolderBar wrapper method implementations
+//
+
+inline int IFQFolderBar::AddBar ( _bstr_t Name, long pWnd ) {
+    int _result;
+    HRESULT _hr = raw_AddBar(Name, pWnd, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+//
+// interface IFQUi wrapper method implementations
+//
+
+inline int IFQUi::AddMainPanel ( _bstr_t PanelName, long pWnd ) {
+    int _result;
+    HRESULT _hr = raw_AddMainPanel(PanelName, pWnd, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IFQUi::ShowMainPanel ( _bstr_t PanelName ) {
+    HRESULT _hr = raw_ShowMainPanel(PanelName);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline int IFQUi::AddMainWndButton ( _bstr_t ButtonName, _bstr_t ButtonPicPath, _bstr_t ButtonTip ) {
+    int _result;
+    HRESULT _hr = raw_AddMainWndButton(ButtonName, ButtonPicPath, ButtonTip, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline int IFQUi::SkinDialog ( long hDlg, long hNoSkinWnd1, long hNoSkinWnd2, long hNoSkinWnd3, long hNoSkinWnd4 ) {
+    int _result;
+    HRESULT _hr = raw_SkinDialog(hDlg, hNoSkinWnd1, hNoSkinWnd2, hNoSkinWnd3, hNoSkinWnd4, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline int IFQUi::SkinDialog2 ( long hDlg, long hNoSkinWnd1, long hNoSkinWnd2, long hNoSkinWnd3, long hNoSkinWnd4, long hNoSkinWnd5 ) {
+    int _result;
+    HRESULT _hr = raw_SkinDialog2(hDlg, hNoSkinWnd1, hNoSkinWnd2, hNoSkinWnd3, hNoSkinWnd4, hNoSkinWnd5, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline int IFQUi::MessageBox ( long hWnd, _bstr_t Message, _bstr_t Caption, long Style ) {
+    int _result;
+    HRESULT _hr = raw_MessageBox(hWnd, Message, Caption, Style, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IFQUi::SkinMenuBegin ( _bstr_t MenuName ) {
+    HRESULT _hr = raw_SkinMenuBegin(MenuName);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IFQUi::SkinMenuEnd ( ) {
+    HRESULT _hr = raw_SkinMenuEnd();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IFQCalendar wrapper method implementations
+//
+
+inline HRESULT IFQCalendar::IsLeapYear ( long nYear, VARIANT_BOOL * pVal ) {
+    HRESULT _hr = raw_IsLeapYear(nYear, pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IFQCalendar::WeekDay ( long nYear, long nMonth, long nDay, long * pVal ) {
+    HRESULT _hr = raw_WeekDay(nYear, nMonth, nDay, pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IFQCalendar::MonthDays ( long nYear, long nMonth, long * pVal ) {
+    HRESULT _hr = raw_MonthDays(nYear, nMonth, pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IFQCalendar::LunarMonthDays ( long nLunarYear, long nLunarMonth, long * pVal ) {
+    HRESULT _hr = raw_LunarMonthDays(nLunarYear, nLunarMonth, pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IFQCalendar::LunarYearDays ( long nLunarYear, long * pVal ) {
+    HRESULT _hr = raw_LunarYearDays(nLunarYear, pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IFQCalendar::GetLeapMonth ( long nLunarYear, long * pVal ) {
+    HRESULT _hr = raw_GetLeapMonth(nLunarYear, pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IFQCalendar::FormatLunarYear ( long nYear, BSTR * pVal ) {
+    HRESULT _hr = raw_FormatLunarYear(nYear, pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IFQCalendar::FormatMonth ( long nMonth, VARIANT_BOOL bLunar, BSTR * pVal ) {
+    HRESULT _hr = raw_FormatMonth(nMonth, bLunar, pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IFQCalendar::FormatLunarDay ( long nDay, BSTR * pVal ) {
+    HRESULT _hr = raw_FormatLunarDay(nDay, pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IFQCalendar::CalcDateDiff ( long nEndYear, long nEndMonth, long nEndDay, long nStartYear, long nStartMonth, long nStartDay, long * pVal ) {
+    HRESULT _hr = raw_CalcDateDiff(nEndYear, nEndMonth, nEndDay, nStartYear, nStartMonth, nStartDay, pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IFQCalendar::GetLunarDate ( long nYear, long nMonth, long nDay, long * nLunarYear, long * nLunarMonth, long * nLunarDay, long * pVal ) {
+    HRESULT _hr = raw_GetLunarDate(nYear, nMonth, nDay, nLunarYear, nLunarMonth, nLunarDay, pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IFQCalendar::GetCalendarDate ( long nLunarYear, long nLunarMonth, long nLunarDay, long * nYear, long * nMonth, long * nDay ) {
+    HRESULT _hr = raw_GetCalendarDate(nLunarYear, nLunarMonth, nLunarDay, nYear, nMonth, nDay);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IFQCalendar::CalcSpansLunarDate ( long nSpanDays, long * nLunarYear, long * nLunarMonth, long * nLunarDay ) {
+    HRESULT _hr = raw_CalcSpansLunarDate(nSpanDays, nLunarYear, nLunarMonth, nLunarDay);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IFQCalendar::CalcLunarDateDiff ( long nLunarYear, long nLunarMonth, long nLunarDay, long * pVal ) {
+    HRESULT _hr = raw_CalcLunarDateDiff(nLunarYear, nLunarMonth, nLunarDay, pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IFQCalendar::CalcSpansCalendarData ( long nSpanDays, long * nYear, long * nMonth, long * nDay ) {
+    HRESULT _hr = raw_CalcSpansCalendarData(nSpanDays, nYear, nMonth, nDay);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IFQCalendar::GetLunarHolDay ( long nLunarYear, long nLunarMonth, long nLunarDay, long * pVal ) {
+    HRESULT _hr = raw_GetLunarHolDay(nLunarYear, nLunarMonth, nLunarDay, pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IFQCalendar::FormatDayInfo ( long nYear, long nMonth, long nDay, VARIANT_BOOL * bHolDay, BSTR * pVal ) {
+    HRESULT _hr = raw_FormatDayInfo(nYear, nMonth, nDay, bHolDay, pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IFQCalendar::GetDayPlan ( long nYear, long nMonth, long nDay, BSTR * bstrPlan ) {
+    HRESULT _hr = raw_GetDayPlan(nYear, nMonth, nDay, bstrPlan);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IFQCalendar::SetDayPlan ( long nYear, long nMonth, long nDay, _bstr_t bstrPlan, VARIANT_BOOL bSaveImmediate ) {
+    HRESULT _hr = raw_SetDayPlan(nYear, nMonth, nDay, bstrPlan, bSaveImmediate);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IFQCalendar::DelDayPlan ( long nYear, long nMonth, long nDay, VARIANT_BOOL bSaveImmediate ) {
+    HRESULT _hr = raw_DelDayPlan(nYear, nMonth, nDay, bSaveImmediate);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IFQCalendar::GetDayAllClockTimes ( long nYear, long nMonth, long nDay, BSTR * bstrClockTimes ) {
+    HRESULT _hr = raw_GetDayAllClockTimes(nYear, nMonth, nDay, bstrClockTimes);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IFQCalendar::GetDayClock ( long nYear, long nMonth, long nDay, long nHour, long nMinute, long nSecond, VARIANT_BOOL * bTip, BSTR * bstrTip, VARIANT_BOOL * bRun, BSTR * bstrRun, BSTR * bstrParam, long * nStatus ) {
+    HRESULT _hr = raw_GetDayClock(nYear, nMonth, nDay, nHour, nMinute, nSecond, bTip, bstrTip, bRun, bstrRun, bstrParam, nStatus);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IFQCalendar::SetDayClock ( long nYear, long nMonth, long nDay, long nHour, long nMinute, long nSecond, VARIANT_BOOL bTip, _bstr_t bstrTip, VARIANT_BOOL bRun, _bstr_t bstrRun, _bstr_t bstrParam, VARIANT_BOOL bSaveImmediate ) {
+    HRESULT _hr = raw_SetDayClock(nYear, nMonth, nDay, nHour, nMinute, nSecond, bTip, bstrTip, bRun, bstrRun, bstrParam, bSaveImmediate);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IFQCalendar::DelDayClock ( long nYear, long nMonth, long nDay, long nHour, long nMinute, long nSecond, VARIANT_BOOL bSaveImmediate ) {
+    HRESULT _hr = raw_DelDayClock(nYear, nMonth, nDay, nHour, nMinute, nSecond, bSaveImmediate);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IFQCalendar::UpdateDay ( long nYear, long nMonth, long nDay ) {
+    HRESULT _hr = raw_UpdateDay(nYear, nMonth, nDay);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IFQTools wrapper method implementations
+//
+
+inline _bstr_t IFQTools::BuildGUID ( ) {
+    BSTR _result;
+    HRESULT _hr = raw_BuildGUID(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IFQTools::RunCommand ( _bstr_t bstrCommand, _bstr_t bstrParam ) {
+    BSTR _result;
+    HRESULT _hr = raw_RunCommand(bstrCommand, bstrParam, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IFQTools::MakeSpellCode ( _bstr_t bstrText, long nMode ) {
+    BSTR _result;
+    HRESULT _hr = raw_MakeSpellCode(bstrText, nMode, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IFQTools::Md5Encode ( _bstr_t bstrInput ) {
+    BSTR _result;
+    HRESULT _hr = raw_Md5Encode(bstrInput, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline long IFQTools::ColorHSB ( long clrInput ) {
+    long _result;
+    HRESULT _hr = raw_ColorHSB(clrInput, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+//
+// interface IApplication wrapper method implementations
+//
+
+inline IFQRootPtr IApplication::GetFQRoot ( ) {
+    struct IFQRoot * _result;
+    HRESULT _hr = get_FQRoot(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IFQRootPtr(_result, false);
+}
