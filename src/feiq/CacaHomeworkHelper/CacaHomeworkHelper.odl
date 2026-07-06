@@ -8,7 +8,7 @@ library CacaHomeworkHelper
 {
 	importlib("stdole32.tlb");
 	importlib("stdole2.tlb");
-	importlib("FeiQ.tlb");
+	importlib("..\tlb\FeiQ.tlb");
 
 
 

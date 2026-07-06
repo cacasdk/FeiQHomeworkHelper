@@ -26,7 +26,7 @@
 #include <afxcmn.h>			// MFC support for Windows Common Controls
 #endif // _AFX_NO_AFXCMN_SUPPORT
 
-#import "FeiQ.tlb" no_namespace named_guids 
+#import "..\tlb\FeiQ.tlb" no_namespace named_guids 
 
 #include "..\include\EventSupport.h"
 #include "..\include\mfcdual.h"
@@ -39,7 +39,7 @@
 #define FQ_MODULE_DESCRIPTION_PLUGINFEEDBACK	_T("CacaHomeworkHelper")
 #define FQ_MODULE_AUTHOR_PLUGINFEEDBACK	_T("CacaSDK")
 
-#define FQ_MODLE_CLSIDS _T("{4ce3c885-1854-44af-ba63-7a8cec4abc41}")//¶à¸öclsidÖ®¼äÓÃ | ¸ô¿ª
+#define FQ_MODLE_CLSIDS _T("{4ce3c885-1854-44af-ba63-7a8cec4abc41}")//ï¿½ï¿½ï¿½clsidÖ®ï¿½ï¿½ï¿½ï¿½ | ï¿½ï¿½ï¿½ï¿½
 //{{AFX_INSERT_LOCATION}}
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
